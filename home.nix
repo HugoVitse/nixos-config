@@ -108,6 +108,9 @@
     libnotify
     brightnessctl
     openssl
+    virtualbox
+    python39
+    pokemon-colorscripts
   ];
 
   # basic configuration of git, please change to your own

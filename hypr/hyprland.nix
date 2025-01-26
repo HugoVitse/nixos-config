@@ -25,10 +25,19 @@
         
         bind = import ./configs/Keybinds.nix;
         bindel = import ./configs/bindel.nix;
+        bindm = [
+          "$mainMod, mouse:272, movewindow"
+          "$mainMod, mouse:273, resizewindow"
+        ];
         env = import ./configs/env.nix;
         monitor=",preferred,auto,1";
 
 
+        binds = {
+          workspace_back_and_forth = true;
+          allow_workspace_cycles = true;
+          pass_mouse_when_bound = false;
+        };
 
 
 

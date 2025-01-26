@@ -14,7 +14,22 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, ... }: let
+
+      pokemonColorscriptsOverlay = final: prev: {
+        pokemon-colorscripts = import ./pokemon-colorscripts.nix {
+          pkgs = final;
+          lib = final.lib;
+        };
+      };
+
+     
+      overlays = [ pokemonColorscriptsOverlay inputs.hyprpanel.overlay ];
+
+      in
+   {
+
+    
     nixosConfigurations = {
       # TODO please change the hostname to your own
       nixos = nixpkgs.lib.nixosSystem {
