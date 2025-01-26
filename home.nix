@@ -166,6 +166,12 @@
   # changes in each release.
   home.stateVersion = "24.11";
 
+  imports = [
+    ./modules/hypr/hyprland.nix
+    ./modules/hypr/hyprpaper.nix
+    ./modules/hypr/hyprlock.nix
+    ./modules/hypr/hypridle.nix
+  ];
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
