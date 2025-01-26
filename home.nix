@@ -104,6 +104,10 @@
     kitty
     vscode
     xfce.thunar 
+    pamixer
+    libnotify
+    brightnessctl
+    openssl
   ];
 
   # basic configuration of git, please change to your own
