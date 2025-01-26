@@ -14,20 +14,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: let
-
-      pokemonColorscriptsOverlay = final: prev: {
-        pokemon-colorscripts = import ./pokemon-colorscripts.nix {
-          pkgs = final;
-          lib = final.lib;
-        };
-      };
-
-     
-      overlays = [ pokemonColorscriptsOverlay inputs.hyprpanel.overlay ];
-
-      in
-   {
+  outputs = inputs@{ nixpkgs, home-manager, ... }: {
 
     
     nixosConfigurations = {
@@ -36,9 +23,16 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+          {
+            environment.systemPackages = with import nixpkgs { system = "x86_64-linux"; }; [
 
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+              (import ./pokemon-colorscripts.nix {
+                inherit pkgs lib;
+              })
+
+            ];
+          }
+
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
