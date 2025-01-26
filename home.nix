@@ -102,7 +102,8 @@
     dunst
     swww
     kitty
-    
+    vscode
+    xfce.thunar 
   ];
 
   # basic configuration of git, please change to your own
