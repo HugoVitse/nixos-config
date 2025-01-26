@@ -55,8 +55,7 @@
     "ALT, tab, bringactivetotop"  
 
     # Special Keys / Hot Keys
-    ", xf86audioraisevolume, exec, $scriptsDir/Volume.sh --inc" #volume up
-    ", xf86audiolowervolume, exec, $scriptsDir/Volume.sh --dec" #volume down
+
     ", xf86AudioMicMute, exec, $scriptsDir/Volume.sh --toggle-mic" #mute mic
     ", xf86audiomute, exec, $scriptsDir/Volume.sh --toggle"
     ", xf86Sleep, exec, systemctl suspend"  # sleep button 
