@@ -71,7 +71,9 @@
     description = "Hugo";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
+
   users.users.test = {
 	isNormalUser = true;
 	description = "compte de test";
@@ -79,6 +81,7 @@
   };
   #home-manager.users.hugo = import ./home.nix;
   programs.hyprland.enable = true;
+  programs.zsh.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
