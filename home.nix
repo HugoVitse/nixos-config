@@ -167,10 +167,10 @@
   home.stateVersion = "24.11";
 
   imports = [
-    ./modules/hypr/hyprland.nix
-    ./modules/hypr/hyprpaper.nix
-    ./modules/hypr/hyprlock.nix
-    ./modules/hypr/hypridle.nix
+    ./hypr/hyprland.nix
+    ./hypr/hyprpaper.nix
+    ./hypr/hyprlock.nix
+    ./hypr/hypridle.nix
   ];
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;

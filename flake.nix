@@ -28,7 +28,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
+            home-manager.backupFileExtension = "backup";
             # TODO replace ryan with your own username
             home-manager.users.hugo = import ./home.nix;
 

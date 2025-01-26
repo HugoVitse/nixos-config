@@ -48,8 +48,8 @@
           "hypridle &"
         ];
 
-        input = import ./input.nix;
-        gestures = import ./gestures.nix;
+        input = import ./configs/inputs.nix;
+        gestures = import ./configs/gestures.nix;
     };
   };
 }

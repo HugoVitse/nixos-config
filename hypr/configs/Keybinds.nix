@@ -154,9 +154,9 @@
     "$mainMod, period, workspace, e+1"
     "$mainMod, comma, workspace, e-1"
 
-    "bind = ALT, F4, killactive"
-    "bind = SUPER,z, exec, firefox-devedition"
-    "bind = SUPER,a, exec, kitty"
-    "bind= , XF86PowerOff, exec, ~/script.sh"
+    "ALT, F4, killactive"
+    "SUPER,z, exec, firefox-devedition"
+    "SUPER,a, exec, kitty"
+    " , XF86PowerOff, exec, ~/script.sh"
     "$mainMod,SUPER_L ,exec, pkill rofi || true && ags -t 'overview'"
 ]

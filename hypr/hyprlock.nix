@@ -55,87 +55,90 @@
             };
 
             # Date
-            label = {
-                monitor = "";
-                text = "cmd[update:18000000] echo \"<b> \"$(date +'%A, %-d %B %Y')\" </b>\"";
-                color = "$color12";
-                font_size = 34;
-                font_family = "JetBrains Mono Nerd Font 10";
-                position = "0, -80";
-                halign = "center";
-                valign = "top";
-            };
 
-            # Hour-Time
-            label = {
-                monitor = "";
-                text = "cmd[update:1000] echo \"$(date +\"%H\")\"";
-            #    text = cmd[update:1000] echo "$(date +"%I")"; #AM/PM
-                color = "rgba(255, 185, 0, .6)";
-                font_size = 150;
-                font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
-                position = "0, -200";
-                halign = "center";
-                valign = "top";
-            };
+            label = [
+                {
+                    monitor = "";
+                    text = "cmd[update:18000000] echo \"<b> \"$(date +'%A, %-d %B %Y')\" </b>\"";
+                    color = "$color12";
+                    font_size = 34;
+                    font_family = "JetBrains Mono Nerd Font 10";
+                    position = "0, -80";
+                    halign = "center";
+                    valign = "top";
+                }
 
-            # Minute-Time
-            label = {
-                monitor = "";
-                text = "cmd[update:1000] echo \"$(date +\"%M\")\"";
-                color = "rgba(255, 255, 255, .6)";
-                font_size = 150;
-                font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
-                position = "0, -450";
-                halign = "center";
-                valign = "top";
-            };
+                # Hour-Time
+                {
+                    monitor = "";
+                    text = "cmd[update:1000] echo \"$(date +\"%H\")\"";
+                #    text = cmd[update:1000] echo "$(date +"%I")"; #AM/PM
+                    color = "rgba(255, 185, 0, .6)";
+                    font_size = 150;
+                    font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
+                    position = "0, -200";
+                    halign = "center";
+                    valign = "top";
+                }
 
-            # Seconds-Time
-            label = {
-                monitor = "";
-                text = "cmd[update:1000] echo \"$(date +\"%S\")\"";
-            #    text = cmd[update:1000] echo "$(date +"%S %p")"; #AM/PM
-                color = "$color12";
-                font_size = 20;
-                font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
-                position = "0, -450";
-                halign = "center";
-                valign = "top";
-            };
+                # Minute-Time
+                {
+                    monitor = "";
+                    text = "cmd[update:1000] echo \"$(date +\"%M\")\"";
+                    color = "rgba(255, 255, 255, .6)";
+                    font_size = 150;
+                    font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
+                    position = "0, -450";
+                    halign = "center";
+                    valign = "top";
+                }
 
-            # User
-            label  = {
-                text = "   $USER";
-                color = "$color10";
-                font_size = 18;
-                font_family = "Inter Display Medium";
-                position = "0, 20";
-                halign = "center";
-                valign = "bottom";
-            };
+                # Seconds-Time
+                {
+                    monitor = "";
+                    text = "cmd[update:1000] echo \"$(date +\"%S\")\"";
+                #    text = cmd[update:1000] echo "$(date +"%S %p")"; #AM/PM
+                    color = "$color12";
+                    font_size = 20;
+                    font_family = "JetBrains Mono Nerd Font Mono ExtraBold";
+                    position = "0, -450";
+                    halign = "center";
+                    valign = "top";
+                }
 
-            # uptime
-            label = {
-                monitor = "";
-                text = "cmd[update:60000] echo \"<b> \"$(uptime -p || $Scripts/UptimeNixOS.sh)\" </b>\"";
-                color = "$color10";
-                font_size = 24;
-                font_family = "JetBrains Mono Nerd Font 10";
-                position = "0, 0";
-                halign = "right";
-                valign = "bottom";
-            };
+                # User
+                {
+                    text = "   $USER";
+                    color = "$color10";
+                    font_size = 18;
+                    font_family = "Inter Display Medium";
+                    position = "0, 20";
+                    halign = "center";
+                    valign = "bottom";
+                }
 
-            label = {
-                text = "cmd[update:3600000] [ -f ~/.cache/.weather_cache ] && cat  ~/.cache/.weather_cache";
-                color = "$color10";
-                font_size = 24;
-                font_family = "JetBrains Mono Nerd Font 10";
-                position = "50, 0";
-                halign = "left";
-                valign = "bottom";
-            };
+                # uptime
+                {
+                    monitor = "";
+                    text = "cmd[update:60000] echo \"<b> \"$(uptime -p || $Scripts/UptimeNixOS.sh)\" </b>\"";
+                    color = "$color10";
+                    font_size = 24;
+                    font_family = "JetBrains Mono Nerd Font 10";
+                    position = "0, 0";
+                    halign = "right";
+                    valign = "bottom";
+                }
+
+                {
+                    text = "cmd[update:3600000] [ -f ~/.cache/.weather_cache ] && cat  ~/.cache/.weather_cache";
+                    color = "$color10";
+                    font_size = 24;
+                    font_family = "JetBrains Mono Nerd Font 10";
+                    position = "50, 0";
+                    halign = "left";
+                    valign = "bottom";
+                }
+            ];
 
             image = {
                 monitor = "";
