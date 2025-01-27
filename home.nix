@@ -108,9 +108,12 @@
     libnotify
     brightnessctl
     openssl
-    virtualbox
     python39
     oh-my-zsh
+    swappy
+    slurp
+    grim
+    gitlab
   ];
 
   # basic configuration of git, please change to your own
@@ -158,18 +161,19 @@
     # set some aliases, feel free to add more or remove some
     shellAliases = {
       k = "kubectl";
+      rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config";
       urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
     };
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-          "git"
-          "zsh-autosuggestions"
-          "zsh-syntax-highlighting"
-      ];
-      theme = "xiong-chiamiov-plus"; #"blinks"; #"agnoster";
-    };
+    # oh-my-zsh = {
+    #   enable = true;
+    #   # plugins = [
+    #   #     "git"
+    #   #     "zsh-autosuggestions"
+    #   #     "zsh-syntax-highlighting"
+    #   # ];
+    #   theme = "xiong-chiamiov-plus"; #"blinks"; #"agnoster";
+    # };
 
     initExtra = import ./zshrc.nix;
   };

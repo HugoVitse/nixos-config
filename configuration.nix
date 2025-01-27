@@ -62,6 +62,7 @@
     variant = "azerty";
   };
 
+
   # Configure console keymap
   console.keyMap = "fr";
 
@@ -69,10 +70,15 @@
   users.users.hugo = {
     isNormalUser = true;
     description = "Hugo";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
+
+  
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+
 
   users.users.test = {
 	isNormalUser = true;
@@ -80,6 +86,8 @@
 	packages = with pkgs; [];
   };
   #home-manager.users.hugo = import ./home.nix;
+  virtualisation.docker.enable = true;
+
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
   # List packages installed in system profile. To search, run:
