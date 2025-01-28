@@ -194,7 +194,8 @@
     ./hypr/hyprpaper.nix
     ./hypr/hyprlock.nix
     ./hypr/hypridle.nix
-  ];
+    ./waybar/waybar.nix
+   ];
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
