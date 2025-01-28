@@ -3,7 +3,7 @@
     enable = true;
     style = ./style.css;
     settings = {
-      mainBar = import ./modules.nix
+      mainBar = import ./modules.nix;
     };
   };
 }

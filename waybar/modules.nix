@@ -71,7 +71,7 @@
         "format-icons"= [
             "󰈸"
         ];
-        "on-click-right"= "kitty --title nvtop sh -c 'nvtop'"
+        "on-click-right"= "kitty --title nvtop sh -c 'nvtop'";
     };
     "temperature#vertical"= {
         "interval"= 10;
@@ -86,7 +86,7 @@
         "format-icons"= [
             "󰈸"
         ];
-        "on-click-right"= "kitty --title nvtop sh -c 'nvtop'"
+        "on-click-right"= "kitty --title nvtop sh -c 'nvtop'";
     };
 
 
@@ -143,7 +143,6 @@
     "hyprland/workspaces#pacman"= {
         "active-only"= false;
         "all-outputs"= true;
-        "format"= "{icon}";
         "on-click"= "activate";
         "on-scroll-up"= "hyprctl dispatch workspace e+1";
         "on-scroll-down"= "hyprctl dispatch workspace e-1";
@@ -186,12 +185,14 @@
             "8"= "八";
             "9"= "九";
             "10"= "十";
-        }
+        };
     };
 
     "hyprland/workspaces#4"= {
-        "format"= "{name}";
-        "format"= " {name} {icon} ";
+        "format"= [
+            "{name}"
+            "{name} {icon} "
+        ];
         "show-special"= false;
         "on-click"= "activate";
         "on-scroll-up"= "hyprctl dispatch workspace e+1";
@@ -252,8 +253,8 @@
             "class<mousepad>"= " ";
             "class<libreoffice-writer>"= " ";
             "class<libreoffice-startcenter>"= "󰏆 ";
-            "class<com.obsproject.Studio>"= " "
-            }   
+            "class<com.obsproject.Studio>"= " ";
+            };
     };
 
     "hyprland/workspaces#cam"= {
@@ -269,7 +270,7 @@
             "2"= [];
             "3"= [];
             "4"= [];
-            "5"= []
+            "5"= [];
         };
             "format-icons"= {
             "1"= "Uno";
@@ -281,8 +282,8 @@
             "7"="Sette";
             "8"="Otto";
             "9"="Nove";
-            "10"="Dieci"
-        }	
+            "10"="Dieci";
+        };	
     };
 
     "group/motherboard"= {
@@ -292,52 +293,52 @@
             "memory"
             "temperature"
             "disk"
-        ]
+        ];
     };
     "group/mobo_drawer"= {
         "orientation"= "inherit";
         "drawer"= {
             "transition-duration"= 500;
             "children-class"= "cpu";
-            "transition-left-to-right"= true
+            "transition-left-to-right"= true;
             };
         "modules"= [
             "temperature"		
             "cpu"
             "memory"
             "disk"
-        ]
+        ];
     };
     "group/laptop"= {
         "orientation"= "inherit";
         "modules"= [
             "backlight"
             "battery"
-        ]
+        ];
     };
     "group/audio"= {
         "orientation"= "inherit";
         "drawer"= {
             "transition-duration"= 500;
             "children-class"= "pulseaudio";
-            "transition-left-to-right"= true
+            "transition-left-to-right"= true;
             };
         "modules"= [
             "pulseaudio"
             "pulseaudio#microphone"
-        ]
+        ];
     };
     "group/connections"= {
         "orientation"= "inherit";
         "drawer"= {
             "transition-duration"= 500;
             "children-class"= "bluetooth";
-            "transition-left-to-right"= true
+            "transition-left-to-right"= true;
             };
         "modules"= [
-            "network";
-            "bluetooth";
-        ]
+            "network"
+            "bluetooth"
+        ];
     };
     "backlight"= {
         "interval"= 2;
@@ -366,7 +367,7 @@
     "backlight#2"= {
     "device"= "intel_backlight";
     "format"= "{icon} {percent}%";
-    "format-icons"= ["" ""]
+    "format-icons"= ["" ""];
     };
     "battery"= {
         "align"= 0;
@@ -376,7 +377,7 @@
         "states"= {
             "good"= 95;
             "warning"= 30;
-            "critical"= 15
+            "critical"= 15;
         };
         "format"= "{icon} {capacity}%";
         "format-charging"= " {capacity}%";
@@ -418,25 +419,25 @@
                 "days"= "<span color='#ecc6d9'><b>{}</b></span>";
                 "weeks"= "<span color='#99ffdd'><b>W{}</b></span>";
                 "weekdays"= "<span color='#ffcc66'><b>{}</b></span>";
-                "today"= "<span color='#ff6699'><b><u>{}</u></b></span>"
-            }
-        }
+                "today"= "<span color='#ff6699'><b><u>{}</u></b></span>";
+            };
+        };
     };
     "actions"= {
         "on-click-right"= "mode";
         "on-click-forward"= "tz_up";
         "on-click-backward"= "tz_down";
         "on-scroll-up"= "shift_up";
-        "on-scroll-down"= "shift_down"
+        "on-scroll-down"= "shift_down";
     };
     "clock#2"= {
         "format"= "  {=%H=%M}";
         "format-alt"= "{=%A  |  %H=%M  |  %e %B}";
-        "tooltip-format"= "<big>{=%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "tooltip-format"= "<big>{=%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
     };
     "clock#3"= {
         "format"= "{=%H=%M - %d/%b}";
-        "tooltip"= false
+        "tooltip"= false;
     };
     "clock#4"= {
         "interval"= 60;
@@ -446,7 +447,7 @@
     };
     "clock#5"= {
         "format"= "{=%a %d | %H=%M}";
-        "format-alt"= "{=%A; %d %B; %Y (%R)}"
+        "format-alt"= "{=%A; %d %B; %Y (%R)}";
     };
     "cpu"= {
         "format"= "{usage}% 󰍛";
@@ -470,7 +471,7 @@
         "format-en"= "US";
         "format-tr"= "Korea";
         "keyboard-name"= "at-translated-set-2-keyboard";
-        "on-click"= "hyprctl switchxkblayout $SET_KB next"
+        "on-click"= "hyprctl switchxkblayout $SET_KB next";
     };
     "hyprland/submap"= {
         "format"= "<span style=\"italic\">  {}</span>";
@@ -481,8 +482,8 @@
         "format"= "{}";
         "rewrite"= {
             "(.*) - Mozilla Firefox"= "🌎 $1";
-            "(.*) - zsh"= "> [$1]"
-        }
+            "(.*) - zsh"= "> [$1]";
+        };
     };
 
     "idle_inhibitor"= {
@@ -490,7 +491,7 @@
         "format-icons"= {
             "activated"= " ";
             "deactivated"= " ";
-        }
+        };
     };
     "keyboard-state"= {
         "capslock"= true;
@@ -500,7 +501,7 @@
         };
         "format-icons"= {
             "locked"= "";
-            "unlocked"= ""
+            "unlocked"= "";
         };
     };
     "memory"= {
@@ -510,7 +511,7 @@
         "format-alt-click"= "click";
         "tooltip"= true;
         "tooltip-format"= "{used=0.1f}GB/{total=0.1f}G";
-        "on-click-right"= "kitty --title btop sh -c 'btop'"
+        "on-click-right"= "kitty --title btop sh -c 'btop'";
     };
     "mpris"= {
         "interval"= 10;
@@ -554,7 +555,7 @@
         "format-icons"= [
             "󰤯" "󰤟" "󰤢" "󰤥" "󰤨"
         ];
-        "on-click-right"= "kitty nmtui"
+        "on-click-right"= "kitty nmtui";
     };
     "network#speed"= {
         "interval"= 1;
@@ -571,7 +572,7 @@
         "max-length"= 24;
         "format-icons"= [
             "󰤯" "󰤟" "󰤢" "󰤥" "󰤨"
-        ]
+        ];
     };
     "power-profiles-daemon"= {
     "format"= "{icon}";
@@ -581,8 +582,8 @@
         "default"= "";
         "performance"= "";
         "balanced"= "";
-        "power-saver"= ""
-    }
+        "power-saver"= "";
+    };
     };
     "pulseaudio"= {
         "format"= "{icon} {volume}%";
@@ -622,7 +623,7 @@
         "phone"= "";
         "portable"= "";
         "car"= "";
-        "default"= ["" "" ""]
+        "default"= ["" "" ""];
         };
     "on-click"= "pamixer --toggle-mute";
     "on-click-right"= "pavucontrol -t 3";
@@ -714,7 +715,7 @@
     };
     "custom/cava_mviz"= {
         "exec"= "~/.config/hypr/scripts/WaybarCava.sh";
-        "format"= "{}"
+        "format"= "{}";
     };
     "custom/playerctl"= {
         "format"= "<span>{}</span>";
@@ -748,7 +749,7 @@
             "inhibited-notification"= "<span foreground='red'><sup></sup></span>";
             "inhibited-none"= "";
             "dnd-inhibited-notification"= "<span foreground='red'><sup></sup></span>";
-            "dnd-inhibited-none"= ""
+            "dnd-inhibited-none"= "";
         };
         "return-type"= "json";
         "exec-if"= "which swaync-client";
@@ -769,32 +770,32 @@
     "custom/separator#dot"= {
         "format"= "";
         "interval"= "once";
-        "tooltip"= false
+        "tooltip"= false;
     };
     "custom/separator#dot-line"= {
         "format"= "";
         "interval"= "once";
-        "tooltip"= false
+        "tooltip"= false;
     };
     "custom/separator#line"= {
         "format"= "|";
         "interval"= "once";
-        "tooltip"= false
+        "tooltip"= false;
     };
     "custom/separator#blank"= {
         "format"= "";
         "interval"= "once";
-        "tooltip"= false
+        "tooltip"= false;
     };
     "custom/separator#blank_2"= {
         "format"= "  ";
         "interval"= "once";
-        "tooltip"= false
+        "tooltip"= false;
     };
     "custom/separator#blank_3"= {
         "format"= "   ";
         "interval"= "once";
-        "tooltip"= false
+        "tooltip"= false;
     };
     "backlight#vertical"= {
         "interval"= 2;
@@ -823,8 +824,8 @@
             "mode-mon-col"= 3;
             "format"= {
                 "today"= "<span color='#0dbc79'>{}</span>";
-            }
-        }
+            };
+        };
     };
     "cpu#vertical"= {
         "format"= "󰍛\n{usage}%";
@@ -852,7 +853,7 @@
             "portable"= "";
             "car"= "";
             "default"= [
-                ""; ""; "󰕾"; ""
+                "" "" "󰕾" ""
             ];
             "tooltip-format"= "{icon} {desc} | {volume}%";
             "ignored-sinks"= [
