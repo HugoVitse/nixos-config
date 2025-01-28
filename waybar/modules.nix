@@ -405,9 +405,9 @@
         "on-click"= "blueman-manager";
     };
     "clock"= {
-        "interval"= 1;
-        "format"= " {=%H=%M=%S}";
-        "format-alt"= " {=%H=%M   %Y; %d %B; %A}";
+        "interval"=1;
+        "format"= " {:%H:%M:%S}";
+        "format-alt"= " {:%H:%M   %Y, %d %B, %A}";
         "tooltip-format"= "<tt><small>{calendar}</small></tt>";
         "calendar"= {
             "mode"= "year";

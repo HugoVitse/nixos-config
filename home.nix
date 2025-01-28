@@ -121,6 +121,9 @@
     enable = true;
     userName = "HugoVitse";
     userEmail = "hugovitse1@gmail.com";
+    aliases = {
+      add-commit = "!git add -A && git commit";
+    };
   };
 
   # starship - an customizable prompt for any shell
