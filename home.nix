@@ -114,6 +114,7 @@
     slurp
     grim
     gitlab
+    wlogout
   ];
 
   # basic configuration of git, please change to your own
