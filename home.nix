@@ -122,7 +122,7 @@
     userName = "HugoVitse";
     userEmail = "hugovitse1@gmail.com";
     aliases = {
-      add-commit = "!git add -A && git commit";
+      add-commit = "!git add -A && git commit -m 'update'";
     };
   };
 
