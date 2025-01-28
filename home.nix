@@ -123,6 +123,7 @@
     userEmail = "hugovitse1@gmail.com";
     aliases = {
       add-commit = "!git add -A && git commit -m 'update'";
+      add-commit-push = "!git add -A && git commit -m 'update' && git push origin master";
     };
   };
 
