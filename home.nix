@@ -27,7 +27,7 @@
   };
 
   # Packages that should be installed to the user profile.
-  home.packages = import ./packages.nix;
+  home.packages = import ./packages.nix pkgs;
 
   # basic configuration of git, please change to your own
   programs.git = {
@@ -78,6 +78,7 @@
     # set some aliases, feel free to add more or remove some
     shellAliases = {
       k = "kubectl";
+      apt = "install.sh";
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config";
       urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
