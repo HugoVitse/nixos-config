@@ -75,7 +75,6 @@ pkgs : with pkgs;[
     libnotify
     brightnessctl
     openssl
-    python39
     oh-my-zsh
     swappy
     slurp
