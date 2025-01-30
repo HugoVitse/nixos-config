@@ -77,7 +77,7 @@
 
     # set some aliases, feel free to add more or remove some
     shellAliases = {
-      k = "kubectl";
+      python-shell = "nix-shell ~/nixos-config/dev-shells/python-shell.nix";
       apt = "./install.sh";
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config";
       urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
