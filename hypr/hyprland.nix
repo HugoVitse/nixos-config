@@ -17,11 +17,11 @@
 
         "$mainMod" = "SUPER";
         # Default
-        "$scriptsDir" =  "$HOME/.config/hypr/scripts";
-        "$configs" =  "$HOME/.config/hypr/configs";
+        "$scriptsDir" =  "$HOME/nixos-config/scripts";
+        "$configs" =  "$HOME/nixos-config/hypr/configs";
         # User
-        "$UserConfigs" = "$HOME/.config/hypr/UserConfigs";
-        "$UserScripts" = "$HOME/.config/hypr/UserScripts";
+        "$UserConfigs" = "$HOME/nixos-config/hypr/UserConfigs";
+        "$UserScripts" = "$HOME/nixos-config/UserScripts";
         
         bind = import ./configs/Keybinds.nix;
         bindel = import ./configs/bindel.nix;

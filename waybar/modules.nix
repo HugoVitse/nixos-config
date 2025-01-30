@@ -54,7 +54,7 @@
         "format-alt-click"= "click";
         "interval"= 3600;
         "return-type"= "json";
-        "exec"= "~/.config/hypr/UserScripts/Weather.sh";
+        "exec"= "~/nixos-config/UserScripts/Weather.sh";
         "exec-if"= "ping wttr.in -c1";
         "tooltip"= true;
     };
@@ -360,8 +360,8 @@
         "on-click-middle"= "";
         "on-click-right"= "";
         "on-update"= "";
-        "on-scroll-up"= "~/.config/hypr/scripts/Brightness.sh --inc";
-        "on-scroll-down"= "~/.config/hypr/scripts/Brightness.sh --dec";
+        "on-scroll-up"= "~/nixos-config/scripts/Brightness.sh --inc";
+        "on-scroll-down"= "~/nixos-config/scripts/Brightness.sh --dec";
         "smooth-scrolling-threshold"= 1;
     };
     "backlight#2"= {
@@ -391,8 +391,8 @@
         "format-time"= "{H}h {M}min";
         "tooltip"= true;
         "tooltip-format"= "{timeTo} {power}w";
-        "on-click-middle"= "~/.config/hypr/scripts/ChangeBlur.sh";
-        "on-click-right"= "~/.config/hypr/scripts/Wlogout.sh";
+        "on-click-middle"= "~/nixos-config/scripts/ChangeBlur.sh";
+        "on-click-right"= "~/nixos-config/scripts/Wlogout.sh";
     };
     "bluetooth"= {
         "format"= "";
@@ -521,8 +521,8 @@
         "on-click"= "playerctl previous";
         "on-click-right"= "playerctl next";
         "scroll-step"= 5.0;
-        "on-scroll-up"= "~/.config/hypr/scripts/Volume.sh --inc";
-        "on-scroll-down"= "~/.config/hypr/scripts/Volume.sh --dec";
+        "on-scroll-up"= "~/nixos-config/scripts/Volume.sh --inc";
+        "on-scroll-down"= "~/nixos-config/scripts/Volume.sh --dec";
         "smooth-scrolling-threshold"= 1;
         "player-icons"= {
             "chromium"= "";
@@ -604,10 +604,10 @@
             ];
         };
         "scroll-step"= 5.0;
-        "on-click"= "~/.config/hypr/scripts/Volume.sh --toggle";
+        "on-click"= "~/nixos-config/scripts/Volume.sh --toggle";
         "on-click-right"= "pavucontrol -t 3";
-        "on-scroll-up"= "~/.config/hypr/scripts/Volume.sh --inc";
-        "on-scroll-down"= "~/.config/hypr/scripts/Volume.sh --dec";
+        "on-scroll-up"= "~/nixos-config/scripts/Volume.sh --inc";
+        "on-scroll-down"= "~/nixos-config/scripts/Volume.sh --dec";
         "tooltip-format"= "{icon} {desc} | {volume}%";
         "smooth-scrolling-threshold"= 1;
     };
@@ -634,10 +634,10 @@
         "format"= "{format_source}";
         "format-source"= " {volume}%";
         "format-source-muted"= "";
-        "on-click"= "~/.config/hypr/scripts/Volume.sh --toggle-mic";
+        "on-click"= "~/nixos-config/scripts/Volume.sh --toggle-mic";
         "on-click-right"= "pavucontrol -t 4";
-        "on-scroll-up"= "~/.config/hypr/scripts/Volume.sh --mic-inc";
-        "on-scroll-down"= "~/.config/hypr/scripts/Volume.sh --mic-dec";
+        "on-scroll-up"= "~/nixos-config/scripts/Volume.sh --mic-inc";
+        "on-scroll-down"= "~/nixos-config/scripts/Volume.sh --mic-dec";
         "tooltip-format"= "{source_desc} | {source_volume}%";
         "scroll-step"= 5;
     };
@@ -648,10 +648,10 @@
     "wireplumber"= {
         "format"= "{icon} {volume} %";
         "format-muted"= " Mute";
-        "on-click"= "~/.config/hypr/scripts/Volume.sh --toggle";
+        "on-click"= "~/nixos-config/scripts/Volume.sh --toggle";
         "on-click-right"= "pavucontrol -t 3";
-        "on-scroll-up"= "~/.config/hypr/scripts/Volume.sh --inc";
-        "on-scroll-down"= "~/.config/hypr/scripts/Volume.sh --dec";
+        "on-scroll-up"= "~/nixos-config/scripts/Volume.sh --inc";
+        "on-scroll-down"= "~/nixos-config/scripts/Volume.sh --dec";
         "format-icons"= [
             "" "" "󰕾" ""
         ];
@@ -672,15 +672,15 @@
     };
     "custom/cycle_wall"= {
         "format"= " ";
-        "on-click"= "~/.config/hypr/UserScripts/WallpaperSelect.sh";
-        "on-click-right"= "~/.config/hypr/UserScripts/WallpaperRandom.sh";
-        "on-click-middle"= "~/.config/hypr/scripts/WaybarStyles.sh";
+        "on-click"= "~/nixos-config/UserScripts/WallpaperSelect.sh";
+        "on-click-right"= "~/nixos-config/UserScripts/WallpaperRandom.sh";
+        "on-click-middle"= "~/nixos-config/scripts/WaybarStyles.sh";
         "tooltip"= true;
         "tooltip-format"= "Left Click= Wallpaper Menu\nMiddle Click= Random wallpaper\nRight Click= Waybar Styles Menu";
     };
     "custom/hint"= {
         "format"= "󰺁 HINT!";
-        "on-click"= "~/.config/hypr/scripts/KeyHints.sh";
+        "on-click"= "~/nixos-config/scripts/KeyHints.sh";
         "tooltip"= true;
         "tooltip-format"= "󱧣 Quick Tips";
     };
@@ -688,19 +688,19 @@
         "exec"= "cat ~/.cache/kb_layout";
         "interval"= 1;
         "format"= " {}";
-        "on-click"= "~/.config/hypr/scripts/SwitchKeyboardLayout.sh";
+        "on-click"= "~/nixos-config/scripts/SwitchKeyboardLayout.sh";
     };
     "custom/light_dark"= {
         "format"= "󰔎";
-        "on-click"= "~/.config/hypr/scripts/DarkLight.sh";
-        "on-click-right"= "~/.config/hypr/scripts/WaybarStyles.sh";
-        "on-click-middle"= "~/.config/hypr/UserScripts/WallpaperSelect.sh";
+        "on-click"= "~/nixos-config/scripts/DarkLight.sh";
+        "on-click-right"= "~/nixos-config/scripts/WaybarStyles.sh";
+        "on-click-middle"= "~/nixos-config/UserScripts/WallpaperSelect.sh";
         "tooltip"= true;
         "tooltip-format"= "Left Click= Switch Dark-Light Themes\nMiddle Click= Wallpaper Menu\nRight Click= Waybar Styles Menu";
     };
     "custom/lock"= {
         "format"= "󰌾";
-        "on-click"= "~/.config/hypr/scripts/LockScreen.sh";
+        "on-click"= "~/nixos-config/scripts/LockScreen.sh";
         "tooltip"= true;
         "tooltip-format"= "󰷛 Screen Lock";
 
@@ -708,13 +708,13 @@
     "custom/menu"= {
         "format"= "";
         "on-click"= "pkill rofi || rofi -show drun -modi run;drun;filebrowser;window";
-        "on-click-middle"= "~/.config/hypr/UserScripts/WallpaperSelect.sh";
-        "on-click-right"= "~/.config/hypr/scripts/WaybarLayout.sh";
+        "on-click-middle"= "~/nixos-config/UserScripts/WallpaperSelect.sh";
+        "on-click-right"= "~/nixos-config/scripts/WaybarLayout.sh";
         "tooltip"= true;
         "tooltip-format"= "Left Click= Rofi Menu\nMiddle Click= Wallpaper Menu\nRight Click= Waybar Layout Menu";
     };
     "custom/cava_mviz"= {
-        "exec"= "~/.config/hypr/scripts/WaybarCava.sh";
+        "exec"= "~/nixos-config/scripts/WaybarCava.sh";
         "format"= "{}";
     };
     "custom/playerctl"= {
@@ -726,14 +726,14 @@
         "on-click"= "playerctl previous";
         "on-click-right"= "playerctl next";
         "scroll-step"= 5.0;
-        "on-scroll-up"= "~/.config/hypr/scripts/Volume.sh --inc";
-        "on-scroll-down"= "~/.config/hypr/scripts/Volume.sh --dec";
+        "on-scroll-up"= "~/nixos-config/scripts/Volume.sh --inc";
+        "on-scroll-down"= "~/nixos-config/scripts/Volume.sh --dec";
         "smooth-scrolling-threshold"= 1;
     };
     "custom/power"= {
         "format"= "⏻ ";
-        "on-click"= "~/.config/hypr/scripts/Wlogout.sh";
-        "on-click-right"= "~/.config/hypr/scripts/ChangeBlur.sh";
+        "on-click"= "~/nixos-config/scripts/Wlogout.sh";
+        "on-click-right"= "~/nixos-config/scripts/ChangeBlur.sh";
         "tooltip"= true;
         "tooltip-format"= "Left Click= Logout Menu\nRight Click= Change Blur";
     };
@@ -809,8 +809,8 @@
         "on-click-middle"= "";
         "on-click-right"= "";
         "on-update"= "";
-        "on-scroll-up"= "~/.config/hypr/scripts/Brightness.sh --inc";
-        "on-scroll-down"= "~/.config/hypr/scripts/Brightness.sh --dec";
+        "on-scroll-up"= "~/nixos-config/scripts/Brightness.sh --inc";
+        "on-scroll-down"= "~/nixos-config/scripts/Brightness.sh --dec";
         "smooth-scrolling-threshold"= 1;
         "tooltip-format"= "{percent}%";
     };
@@ -861,10 +861,10 @@
             ];
         };
         "scroll-step"= 5.0;
-        "on-click"= "~/.config/hypr/scripts/Volume.sh --toggle";
+        "on-click"= "~/nixos-config/scripts/Volume.sh --toggle";
         "on-click-right"= "pavucontrol -t 3";
-        "on-scroll-up"= "~/.config/hypr/scripts/Volume.sh --inc";
-        "on-scroll-down"= "~/.config/hypr/scripts/Volume.sh --dec";
+        "on-scroll-up"= "~/nixos-config/scripts/Volume.sh --inc";
+        "on-scroll-down"= "~/nixos-config/scripts/Volume.sh --dec";
         "tooltip-format"= "{icon} {desc} | {volume}%";
         "smooth-scrolling-threshold"= 1;
     };
@@ -873,9 +873,9 @@
         "format-source"= "󰍬";
         "format-source-muted"= "󰍭";
         "on-click-right"= "pavucontrol";
-        "on-click"= "~/.config/hypr/scripts/Volume.sh --toggle-mic";
-        "on-scroll-up"= "~/.config/hypr/scripts/Volume.sh --mic-inc";
-        "on-scroll-down"= "~/.config/hypr/scripts/Volume.sh --mic-dec";
+        "on-click"= "~/nixos-config/scripts/Volume.sh --toggle-mic";
+        "on-scroll-up"= "~/nixos-config/scripts/Volume.sh --mic-inc";
+        "on-scroll-down"= "~/nixos-config/scripts/Volume.sh --mic-dec";
         "max-volume"= 100;
         "tooltip"= true;
         "tooltip-format"= "{source_desc} | {source_volume}%";
@@ -883,8 +883,8 @@
     "custom/power_vertical"= {
         "format"= "⏻";
         "exec"= "echo ; echo 󰟡 power // blur";
-        "on-click"= "~/.config/hypr/scripts/Wlogout.sh";
-        "on-click-right"= "~/.config/hypr/scripts/ChangeBlur.sh";
+        "on-click"= "~/nixos-config/scripts/Wlogout.sh";
+        "on-click-right"= "~/nixos-config/scripts/ChangeBlur.sh";
         "interval"= 86400;
         "tooltip"= true;
     };
