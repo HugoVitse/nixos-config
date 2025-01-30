@@ -43,6 +43,9 @@
     layout = "fr";
     variant = "azerty";
   };
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.usbmuxd.enable = true;
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -55,7 +58,7 @@
   users.users.hugo = {
     isNormalUser = true;
     description = "Hugo";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
