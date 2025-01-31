@@ -18,7 +18,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Remplace 'path/to/your/file' par le chemin vers ton fichier
-content=$(cat ~/.cache/.theme_mode)
+content=$(cat ~/nixos-config/.theme_mode)
 
 if [[ "$content" == "Light" ]]; then
     # Remplace 'commande_light' par la commande que tu veux exécuter pour 'Light'
@@ -42,7 +42,7 @@ alias lt='eza -a --tree --level=1 --icons'
 clear() {
     command clear  # Exécute la commande clear
     # Ajoute ici la commande supplémentaire que tu veux exécuter
-    content=$(cat ~/.cache/.theme_mode)
+    content=$(cat ~/nixos-config/.theme_mode)
     if [[ "$content" == "Light" ]]; then
     # Remplace 'commande_light' par la commande que tu veux exécuter pour 'Light'
         pokemon-colorscripts --no-title -n reshiram
