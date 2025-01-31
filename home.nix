@@ -57,7 +57,7 @@
 
     shellAliases = {
       python-shell = "nix-shell ~/nixos-config/dev-shells/python-shell.nix";
-      apt = "./package-installer.sh";
+      apt = "~/nixos-config/package-installer.sh";
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config";
       urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
