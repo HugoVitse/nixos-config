@@ -93,4 +93,5 @@ pkgs : with pkgs;[
 	lightdm
 	lightdm-gtk-greeter
 	exiftool
+	playerctl
 ]
