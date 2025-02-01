@@ -87,4 +87,10 @@ pkgs : with pkgs;[
     libmtp 
     simple-mtpfs
     ifuse
+	gobuster
+	networkmanagerapplet
+	john
+	lightdm
+	lightdm-gtk-greeter
+	exiftool
 ]

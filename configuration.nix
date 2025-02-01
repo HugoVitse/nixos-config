@@ -39,10 +39,26 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "fr";
-    variant = "azerty";
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "fr";
+      variant = "azerty";
+    };
+    displayManager.lightdm.enable = true;
+    displayManager.lightdm.greeters.gtk = {
+      theme.name = "Arc-Dark";
+      iconTheme.name = "Papirus";
+    };
+    displayManager.lightdm.background = "/var/lib/lightdm/background_berserk2.jpg";
+    displayManager.lightdm.greeters.gtk.extraConfig = ''
+      position=50%,center 75%,center
+      default-user-image=/var/lib/lightdm/user.png
+    '';
   };
+
+  
+
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.usbmuxd.enable = true;
@@ -83,6 +99,7 @@
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
      git
+     arc-theme
   ];
 
 

@@ -20,25 +20,25 @@ action="$1"
 package="$2"
 
 if [[ "$action" == "install" ]]; then
-    if grep -q "$package" packages.nix; then
+    if grep -q "$package" ~/nixos-config/packages.nix; then
         echo "Package déjà installé : $package"
         exit 1
     else
-        sed -i '$ d' packages.nix
-        echo -e "\t$package" >> packages.nix
-        echo "]" >> packages.nix
+        sed -i '$ d' ~/nixos-config/packages.nix
+        echo -e "\t$package" >> ~/nixos-config/packages.nix
+        echo "]" >> ~/nixos-config/packages.nix
         if [[ no_rebuild -eq 0 ]]; then
             sudo nixos-rebuild switch --flake ~/nixos-config > /dev/null 2>&1
             if [ $? -ne 0 ]; then
-                sed -i "/$package/d" packages.nix
+                sed -i "/$package/d" ~/nixos-config/packages.nix
                 echo "Package non trouvé : $package"
                 exit 1
             fi
         fi
     fi
 else
-    if grep -q "$package" packages.nix; then
-        sed -i "/$package/d" packages.nix
+    if grep -q "$package" ~/nixos-config/packages.nix; then
+        sed -i "/$package/d" ~/nixos-config/packages.nix
         if [[ no_rebuild -eq 0 ]]; then
             sudo nixos-rebuild switch --flake ~/nixos-config > /dev/null 2>&1
         fi

@@ -25,6 +25,7 @@
         bindel = import ./configs/bindel.nix;
         bindm = import ./configs/bindm.nix;
         binds = import ./configs/binds.nix;
+        bindl = import ./configs/bindl.nix;
 
         #inputs
         input = import ./configs/inputs.nix;

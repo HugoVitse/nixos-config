@@ -6,6 +6,7 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.python3           # Python 3 interpreter
     pkgs.python3Packages.virtualenv  # Virtual environment tool
+    pkgs.zsh
   ];
 
   # Optional: Add a custom environment message
