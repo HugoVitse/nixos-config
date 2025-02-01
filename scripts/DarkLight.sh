@@ -31,7 +31,7 @@ swww="swww img"
 effect="--transition-bezier .43,1.19,1,.4 --transition-fps 60 --transition-type grow --transition-pos 0.925,0.977 --transition-duration 2"
 
 # Determine current theme mode
-if [ "$(cat $HOME/.cache/.theme_mode)" = "Light" ]; then
+if [ "$(cat $HOME/nixos-config/.theme_mode)" = "Light" ]; then
     next_mode="Dark"
     # Logic for Dark mode
     wallpaper_path="$dark_wallpapers"
@@ -43,7 +43,7 @@ fi
 
 # Function to update theme mode for the next cycle
 update_theme_mode() {
-    echo "$next_mode" > ~/.cache/.theme_mode
+    echo "$next_mode" > ~/nixos-config/.theme_mode
 }
 
 # Function to notify user
