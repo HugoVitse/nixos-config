@@ -94,4 +94,5 @@ pkgs : with pkgs;[
 	lightdm-gtk-greeter
 	exiftool
 	playerctl
+	papirus-icon-theme
 ]

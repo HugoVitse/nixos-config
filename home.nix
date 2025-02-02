@@ -13,6 +13,7 @@
   gtk = {
     enable = true;
     theme.name = "Adwaita-dark";
+    iconTheme.name = "Papirus";
   };
   # Packages that should be installed to the user profile.
   home.packages = import ./packages.nix pkgs;
