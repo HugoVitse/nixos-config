@@ -10,6 +10,10 @@
     "Xft.dpi" = 172;
   };
 
+  gtk = {
+    enable = true;
+    theme.name = "Adwaita-dark";
+  };
   # Packages that should be installed to the user profile.
   home.packages = import ./packages.nix pkgs;
 
@@ -56,6 +60,7 @@
     enableCompletion = true;
 
     shellAliases = {
+      push-config = "cd ~/nixos-config && git add -A && git commit -m 'update' && git push origin master";
       python-shell = "nix-shell ~/nixos-config/dev-shells/python-shell.nix";
       edit = "code ~/nixos-config/";
       apt = "~/nixos-config/package-installer.sh";

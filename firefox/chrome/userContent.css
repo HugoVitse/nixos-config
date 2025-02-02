@@ -1,0 +1,48 @@
+@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
+    .click-target-container *, .top-sites-list * {
+        color: #fff !important ;
+        text-shadow: 2px 2px 2px #222 !important ;
+    }
+
+    body::before {
+        content: "" ;
+        z-index: -1 ;
+        position: fixed ;
+        top: 0 ;
+        left: 0 ;
+        background: #f9a no-repeat url(img/background_berserk.jpg) center ;
+        background-size: cover ;
+        width: 100vw ;
+        height: 100vh ;
+    }
+
+    
+    .logo {
+        background: image-set(url("file:///home/hugo/.mozilla/firefox/fjwa4600.dev-edition-default/chrome/img/icon.png"), url("file:///home/hugo/.mozilla/firefox/fjwa4600.dev-edition-default/chrome/img/icon.png") 2x) no-repeat center !important ;
+        background-size: 64px !important ;
+    }
+
+    .outer-wrapper{
+        transform: scale(2) !important;
+    }
+
+    main {
+        transform: translate(-50%,-50%) !important;
+        top: 50% !important;
+        position: absolute !important;
+        left: 50% !important;
+    }
+
+    body {
+        overflow: hidden !important;
+    }
+
+    .search-inner-wrapper {
+        transform: scale(0.7);
+    }
+    .wordmark {
+        fill:white !important;
+    }
+}
+
+
