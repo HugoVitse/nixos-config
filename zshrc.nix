@@ -4,8 +4,6 @@
 export ZSH="$HOME/nixos-config/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/nixos-config/.oh-my-zsh/custom"
 
-ZSH_THEME="xiong-chiamiov-plus"
-
 plugins=( 
     git
     zsh-autosuggestions
@@ -17,18 +15,7 @@ source $ZSH/oh-my-zsh.sh
 # Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
 
 
-# Remplace 'path/to/your/file' par le chemin vers ton fichier
-content=$(cat ~/nixos-config/.theme_mode)
 
-if [[ "$content" == "Light" ]]; then
-    # Remplace 'commande_light' par la commande que tu veux exécuter pour 'Light'
-    pokemon-colorscripts --no-title -s -n reshiram
-elif [[ "$content" == "Dark" ]]; then
-    # Remplace 'commande_dark' par la commande que tu veux exécuter pour 'Dark'
-    pokemon-colorscripts --no-title -s -n zekrom
-else
-    echo "Contenu non reconnu : $content"
-fi
 
 
 # fastfetch. Will be disabled if above colorscript was chosen to install
@@ -39,20 +26,7 @@ alias ls='eza -a --icons'
 alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=1 --icons'
 
-clear() {
-    command clear  # Exécute la commande clear
-    # Ajoute ici la commande supplémentaire que tu veux exécuter
-    content=$(cat ~/nixos-config/.theme_mode)
-    if [[ "$content" == "Light" ]]; then
-    # Remplace 'commande_light' par la commande que tu veux exécuter pour 'Light'
-        pokemon-colorscripts --no-title -n reshiram
-    elif [[ "$content" == "Dark" ]]; then
-    # Remplace 'commande_dark' par la commande que tu veux exécuter pour 'Dark'
-    	pokemon-colorscripts --no-title -n zekrom
-    else
-    	echo "Contenu non reconnu : $content"
-    fi
-}
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

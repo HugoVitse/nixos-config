@@ -95,4 +95,8 @@ pkgs : with pkgs;[
 	exiftool
 	playerctl
 	papirus-icon-theme
+	thc-hydra
+	tcpdump
+	wireshark
+	inetutils
 ]

@@ -1,5 +1,44 @@
 # ANSI formatting function (\033[<code>m)
 # 0: reset, 1: bold, 4: underline, 22: no bold, 24: no underline, 31: red, 33: yellow
+
+if [[ -n "$SHELL_THEME" ]]; then
+    ZSH_THEME="$SHELL_THEME"
+    pokemon_dark="charizard"
+    pokemon_light="charizard"
+else
+    ZSH_THEME="xiong-chiamiov-plus"
+    pokemon_dark="zekrom"
+    pokemon_light="reshiram"
+fi
+
+# Remplace 'path/to/your/file' par le chemin vers ton fichier
+content=$(cat ~/nixos-config/.theme_mode)
+
+if [[ "$content" == "Light" ]]; then
+    # Remplace 'commande_light' par la commande que tu veux exécuter pour 'Light'
+    pokemon-colorscripts --no-title -s -n "$pokemon_light"
+elif [[ "$content" == "Dark" ]]; then
+    # Remplace 'commande_dark' par la commande que tu veux exécuter pour 'Dark'
+    pokemon-colorscripts --no-title -s -n "$pokemon_dark"
+else
+    echo "Contenu non reconnu : $content"
+fi
+
+clear() {
+    command clear  # Exécute la commande clear
+    # Ajoute ici la commande supplémentaire que tu veux exécuter
+    content=$(cat ~/nixos-config/.theme_mode)
+    if [[ "$content" == "Light" ]]; then
+    # Remplace 'commande_light' par la commande que tu veux exécuter pour 'Light'
+      pokemon-colorscripts --no-title -n "$pokemon_light"
+    elif [[ "$content" == "Dark" ]]; then
+    # Remplace 'commande_dark' par la commande que tu veux exécuter pour 'Dark'
+    	pokemon-colorscripts --no-title -n "$pokemon_dark"
+    else
+    	echo "Contenu non reconnu : $content"
+    fi
+}
+
 omz_f() {
   [ $# -gt 0 ] || return
   IFS=";" printf "\033[%sm" $*

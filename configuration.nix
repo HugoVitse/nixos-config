@@ -74,11 +74,12 @@
   users.users.hugo = {
     isNormalUser = true;
     description = "Hugo";
-    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers"];
+    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" "wireshark"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
 
+  programs.wireshark.enable=true;
   
   virtualisation.virtualbox.host.enable = true;
   virtualisation.docker.enable = true;
@@ -101,6 +102,15 @@
      git
      arc-theme
   ];
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 80 443 4444 5555 20 21 ];
+    allowedUDPPortRanges = [
+      { from = 4000; to = 4007; }
+      { from = 8000; to = 8010; }
+    ];
+  };
 
 
   system.stateVersion = "24.11"; # Did you read the comment?
