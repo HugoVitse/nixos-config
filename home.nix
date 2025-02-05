@@ -62,7 +62,7 @@
 
     shellAliases = {
       push-config = "cd ~/nixos-config && git add -A && git commit -m 'update' && git push origin master";
-      python-shell = "nix-shell --run zsh ~/nixos-config/dev-shells/python-shell.nix";
+      python-shell = "nix develop ~/nixos-config/dev-shells/python/ --command zsh";
       edit = "code ~/nixos-config/";
       apt = "~/nixos-config/package-installer.sh";
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config";
