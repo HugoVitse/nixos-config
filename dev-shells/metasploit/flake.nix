@@ -7,12 +7,12 @@
   };
 
 
-  outputs = { self, nixpkgs, flake-utils }:
+  outputs = { self, nixpkgs, flake-utils, nix-security}:
     flake-utils.lib.eachDefaultSystem
       (system:
         let pkgs = nixpkgs.legacyPackages.${system}; in
         {
-          devShells.default = import ./metasploit.nix { inherit pkgs; };
+          devShells.default = import ./metasploit.nix { inherit system nix-security pkgs; };
         }
       );
 }
