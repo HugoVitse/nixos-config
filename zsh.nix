@@ -2,6 +2,7 @@
     enable = true;
 
     shellAliases = {
+      ettercap = "nix develop ~/nixos-config/dev-shells/ettercap/ --command zsh";
       cpp = "nix develop ~/nixos-config/dev-shells/cpp/ --command zsh";
       gc = "~/nixos-config/scripts/GarbageCollector.sh";
       push-config = "cd ~/nixos-config && git add -A && git commit -m 'update' && git push origin master";
