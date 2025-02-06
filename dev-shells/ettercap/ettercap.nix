@@ -3,13 +3,11 @@
 pkgs.mkShell {
   # Add packages to the shell environment
   buildInputs = [
-    pkgs.gnumake 
-    pkgs.cmake
-    pkgs.gtest          
+    pkgs.ettercap        
   ];
 
   # Optional: Add a custom environment message
   shellHook = ''
-    export SHELL_THEME="C++"
+    export SHELL_THEME="Ettercap"
   '';
 }
