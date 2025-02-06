@@ -146,6 +146,6 @@
     "ALT, F4, killactive"
     "SUPER,z, exec, firefox-devedition"
     "SUPER,a, exec, kitty"
-    " , XF86PowerOff, exec, ~/script.sh"
+    " , XF86PowerOff, exec, $scriptsDir/Wlogout.sh"
     "$mainMod,SUPER_L ,exec, pkill rofi || true && ags -t 'overview'"
 ]

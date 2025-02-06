@@ -62,6 +62,10 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.usbmuxd.enable = true;
+  services.logind.extraConfig = "''
+    # don’t shutdown when power button is short-pressed
+    HandlePowerKey=ignore
+  ''";
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];

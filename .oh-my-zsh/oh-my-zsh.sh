@@ -2,7 +2,7 @@
 # 0: reset, 1: bold, 4: underline, 22: no bold, 24: no underline, 31: red, 33: yellow
 
 if [[ -n "$SHELL_THEME" ]]; then
-    ZSH_THEME="$SHELL_THEME"
+    ZSH_THEME="xiong-chiamiov-dev"
     pokemon_dark="charizard"
     pokemon_light="charizard"
 else

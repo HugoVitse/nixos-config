@@ -4,7 +4,7 @@
   # TODO please change the username & home directory to your own
   home.username = "hugo";
   home.homeDirectory = "/home/hugo";
-
+  nixpkgs.config.allowUnfree = true;
   xresources.properties = {
     "Xcursor.size" = 16;
     "Xft.dpi" = 172;
@@ -29,51 +29,8 @@
     };
   };
 
-  # starship - an customizable prompt for any shell
-  programs.starship = {
-    enable = true;
-    # custom settings
-    settings = {
-      add_newline = false;
-      aws.disabled = true;
-      gcloud.disabled = true;
-      line_break.disabled = true;
-    };
-  };
 
-  # alacritty - a cross-platform, GPU-accelerated terminal emulator
-  programs.alacritty = {
-    enable = true;
-    # custom settings
-    settings = {
-      env.TERM = "xterm-256color";
-      font = {
-        size = 12;
-        draw_bold_text_with_bright_colors = true;
-      };
-      scrolling.multiplier = 5;
-      selection.save_to_clipboard = true;
-    };
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-
-    shellAliases = {
-      push-config = "cd ~/nixos-config && git add -A && git commit -m 'update' && git push origin master";
-      python-shell = "nix develop ~/nixos-config/dev-shells/python/ --command zsh";
-      metasploit = "nix develop ~/nixos-config/dev-shells/metasploit/ --command zsh";
-      edit = "code ~/nixos-config/";
-      apt = "~/nixos-config/package-installer.sh";
-      rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config";
-      urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
-      urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
-    };
-
-    initExtra = import ./zshrc.nix;
-  };
-
+  programs.zsh = import ./zsh.nix;
 
 
   home.stateVersion = "24.11";

@@ -6,14 +6,10 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.python3           # Python 3 interpreter
     pkgs.python3Packages.virtualenv  # Virtual environment tool
-    pkgs.zsh
   ];
 
   # Optional: Add a custom environment message
   shellHook = ''
-    export SHELL_THEME="xiong-chiamiov-dev"
-    echo "Virtual environment shell for Jupyter notebooks initialized!"
-    echo "Run: python3 -m venv venv && source venv/bin/activate"
-    echo "Then install packages like 'notebook' and 'ipykernel' inside the venv."
+    export SHELL_THEME="Python"
   '';
 }

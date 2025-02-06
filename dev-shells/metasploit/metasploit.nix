@@ -7,6 +7,6 @@ pkgs.mkShell {
     ];
 
     shellHook = ''
-        export SHELL_THEME="xiong-chiamiov-dev"
+        export SHELL_THEME="Metasploit"
     '';
 }
