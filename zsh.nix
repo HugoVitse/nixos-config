@@ -2,6 +2,7 @@
     enable = true;
 
     shellAliases = {
+      cpp = "nix develop ~/nixos-config/dev-shells/cpp/ --command zsh";
       gc = "~/nixos-config/scripts/GarbageCollector.sh";
       push-config = "cd ~/nixos-config && git add -A && git commit -m 'update' && git push origin master";
       python-shell = "nix develop ~/nixos-config/dev-shells/python/ --command zsh";
