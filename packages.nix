@@ -99,4 +99,8 @@ pkgs : with pkgs;[
 	tcpdump
 	wireshark
 	inetutils
+	burpsuite
+	mysql84
+	hexedit
+	pngcheck
 ]
