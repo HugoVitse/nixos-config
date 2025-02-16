@@ -1,5 +1,5 @@
 {
-  description = "autopsy shell dev flake";
+  description = "ettercap shell dev flake";
 
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
@@ -8,7 +8,7 @@
       (system:
         let pkgs = nixpkgs.legacyPackages.${system}; in
         {
-          devShells.default = import ./autopsy.nix { inherit pkgs; };
+          devShells.default = import ./ghidra.nix { inherit pkgs; };
         }
       );
 }

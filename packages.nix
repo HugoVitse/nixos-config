@@ -103,4 +103,6 @@ pkgs : with pkgs;[
 	mysql84
 	hexedit
 	pngcheck
+	intel-ocl
+	docker-compose
 ]
