@@ -148,4 +148,5 @@
     "SUPER,a, exec, kitty"
     " , XF86PowerOff, exec, $scriptsDir/Wlogout.sh"
     "$mainMod,SUPER_L ,exec, pkill rofi || true && ags -t 'overview'"
+    "$mainMod, V, togglefloating,"
 ]

@@ -1,6 +1,6 @@
 
 
-{ config, pkgs, ... }:
+{ inputs,config, pkgs, ... }:
 
 {
   imports =  [./hardware-configuration.nix ];
@@ -9,6 +9,16 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  programs.nix-ld.enable = true;
+
+  programs.nix-ld.libraries = with pkgs; [
+
+    libstdcxx5
+    libgcc
+    libcxx
+
+  ];
 
   fonts.packages = with pkgs; [  nerdfonts];
 
@@ -105,6 +115,7 @@
      wget
      git
      arc-theme
+     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
   networking.firewall = {

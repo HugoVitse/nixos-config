@@ -2,7 +2,7 @@
     enable = true;
 
     shellAliases = {
-      ghidra = "nix develop ~/nixos-config/dev-shells/ghidra/ --command zsh";
+      reverse = "nix develop ~/nixos-config/dev-shells/reverse/ --command zsh";
       ettercap = "nix develop ~/nixos-config/dev-shells/ettercap/ --command zsh";
       cpp = "nix develop ~/nixos-config/dev-shells/cpp/ --command zsh";
       autopsy = "nix develop ~/nixos-config/dev-shells/autopsy/ --command zsh";

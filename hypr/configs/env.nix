@@ -12,4 +12,5 @@
     "XDG_SESSION_TYPE,wayland"
     "MOZ_ENABLE_WAYLAND,1"
     "ELECTRON_OZONE_PLATFORM_HINT,auto"
+    "HYPRCURSOR_THEME,rose-pine-hyprcursor"
 ]
