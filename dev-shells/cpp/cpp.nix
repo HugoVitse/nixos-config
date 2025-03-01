@@ -5,7 +5,12 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.gnumake 
     pkgs.cmake
-    pkgs.gtest          
+    pkgs.gtest     
+    pkgs.openssl
+    pkgs.podofo
+    pkgs.fontconfig
+    pkgs.libjpeg   
+    pkgs.gpp  
   ];
 
   # Optional: Add a custom environment message

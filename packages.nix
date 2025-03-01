@@ -105,4 +105,15 @@ pkgs : with pkgs;[
 	pngcheck
 	intel-ocl
 	docker-compose
+	whatweb
+	openvpn
+	obsidian
+	binwalk
+	wpscan
+	sqlitebrowser
+	xfce.mousepad
+	postman
+	xbindkeys
+	xdotool
+	xorg.xev
 ]

@@ -6,6 +6,7 @@
   imports =  [./hardware-configuration.nix ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -106,6 +107,8 @@
     packages = with pkgs; [];
   };
 
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.hplip ];
 
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
@@ -126,6 +129,21 @@
       { from = 8000; to = 8010; }
     ];
   };
+
+    # Intel Xe Graphics
+  nixpkgs.config.packageOverrides = pkgs: {
+      intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+    };
+  hardware.graphics = { # hardware.graphics since NixOS 24.11
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD
+      intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      libvdpau-va-gl
+      vpl-gpu-rt
+    ];
+  };
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
 
   system.stateVersion = "24.11"; # Did you read the comment?
