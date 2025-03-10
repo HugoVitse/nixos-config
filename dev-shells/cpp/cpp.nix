@@ -10,7 +10,8 @@ pkgs.mkShell {
     pkgs.podofo
     pkgs.fontconfig
     pkgs.libjpeg   
-    pkgs.gpp  
+    pkgs.gpp
+    pkgs.boost
   ];
 
   # Optional: Add a custom environment message

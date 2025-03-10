@@ -149,4 +149,8 @@
     " , XF86PowerOff, exec, $scriptsDir/Wlogout.sh"
     "$mainMod,SUPER_L ,exec, pkill rofi || true && ags -t 'overview'"
     "$mainMod, V, togglefloating,"
+
+    "$mainMod ALT, mouse_down, exec, hyprctl keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 + 0.5}')"
+    "$mainMod ALT, mouse_up, exec, hyprctl keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 - 0.5}')"
+    "$mainMod SHIFT, mouse_up, exec, hyprctl keyword cursor:zoom_factor 1"
 ]
