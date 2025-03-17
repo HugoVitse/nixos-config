@@ -4,6 +4,7 @@
     shellAliases = {
       reverse = "nix develop ~/nixos-config/dev-shells/reverse/ --command zsh";
       ettercap = "nix develop ~/nixos-config/dev-shells/ettercap/ --command zsh";
+      node-shell = "nix develop ~/nixos-config/dev-shells/node/ --command zsh";
       cpp = "nix develop ~/nixos-config/dev-shells/cpp/ --command zsh";
       autopsy-shell = "nix develop ~/nixos-config/dev-shells/autopsy/ --command zsh";
       gc = "~/nixos-config/scripts/GarbageCollector.sh";

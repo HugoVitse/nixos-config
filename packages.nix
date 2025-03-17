@@ -116,4 +116,5 @@ pkgs : with pkgs;[
 	xbindkeys
 	xdotool
 	xorg.xev
+	ngrok
 ]
