@@ -117,4 +117,21 @@ pkgs : with pkgs;[
 	xdotool
 	xorg.xev
 	ngrok
+	expect
+	jdk
+	atlauncher
+	qbittorrent
+	vlc
+	hplip
+	chromium
+	plex
+	plex-desktop
+	fastfetch
+	pfetch
+	obs-studio
+	kdePackages.kmag
+	libpcap
+	python312Packages.libpcap
+	gparted
+	xorg.xhost
 ]

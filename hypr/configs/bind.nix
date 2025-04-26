@@ -153,4 +153,6 @@
     "$mainMod ALT, mouse_down, exec, hyprctl keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 + 0.5}')"
     "$mainMod ALT, mouse_up, exec, hyprctl keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 - 0.5}')"
     "$mainMod SHIFT, mouse_up, exec, hyprctl keyword cursor:zoom_factor 1"
+    "$mainMod ALT, mouse_down, exec, hyprctl keyword cursor:zoom_factor $(awk 'BEGIN {print $(hyprctl getoption cursor:zoom_factor | grep 'float:' | awk '{print $2}') - 0.5}')"
+    "$mainMod ALT, mouse_up, exec, hyprctl keyword cursor:zoom_factor $(awk 'BEGIN {print $(hyprctl getoption cursor:zoom_factor | grep 'float:' | awk '{print $2}') + 0.5}')"
 ]

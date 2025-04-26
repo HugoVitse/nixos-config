@@ -16,6 +16,7 @@
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos-config";
       urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
       urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
+      casque = "~/nixos-config/scripts/autobluetooth.sh &";
     };
 
     initExtra = import ./zshrc.nix;

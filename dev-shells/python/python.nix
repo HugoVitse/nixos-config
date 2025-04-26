@@ -9,6 +9,7 @@ pkgs.mkShell {
     pkgs.python3Packages.pip          # Python 3 interpreter
     pkgs.python3Packages.tkinter
     pkgs.python3Packages.virtualenv  # Virtual environment tool
+    pkgs.python3Packages.libpcap
   ];
 
   # Optional: Add a custom environment message

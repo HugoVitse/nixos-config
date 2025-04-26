@@ -22,7 +22,7 @@
   ];
 
   fonts.packages = with pkgs; [  nerdfonts];
-
+  services.flatpak.enable = true;
   networking.hostName = "nixos"; 
 
   # Enable networking
@@ -71,6 +71,7 @@
   
 
   services.gvfs.enable = true;
+
   services.udisks2.enable = true;
   services.usbmuxd.enable = true;
   services.logind.extraConfig = "''
@@ -78,8 +79,12 @@
     HandlePowerKey=ignore
   ''";
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  xdg.portal = {
+   enable = true;
+   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+   xdgOpenUsePortal = true;
+  };
 
 
   # Configure console keymap
@@ -89,7 +94,7 @@
   users.users.hugo = {
     isNormalUser = true;
     description = "Hugo";
-    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" "wireshark"];
+    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" "wireshark" "scanner" "lp"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
@@ -109,6 +114,9 @@
 
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.hplip ];
+
+  hardware.sane.enable = true; 
+  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
