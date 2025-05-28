@@ -2,6 +2,11 @@
     enable = true;
 
     shellAliases = {
+      c = "./scripts/c.sh";
+      cr = "./scripts/cr.sh";
+      t = "./scripts/test.sh";
+      r = "./scripts/run.sh";
+      ct = "./scripts/ct.sh";
       reverse = "nix develop ~/nixos-config/dev-shells/reverse/ --command zsh";
       ettercap = "nix develop ~/nixos-config/dev-shells/ettercap/ --command zsh";
       node-shell = "nix develop ~/nixos-config/dev-shells/node/ --command zsh";
@@ -19,5 +24,5 @@
       casque = "~/nixos-config/scripts/autobluetooth.sh &";
     };
 
-    initExtra = import ./zshrc.nix;
+    initContent = import ./zshrc.nix;
 }

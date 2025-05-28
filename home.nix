@@ -4,7 +4,6 @@
   # TODO please change the username & home directory to your own
   home.username = "hugo";
   home.homeDirectory = "/home/hugo";
-  nixpkgs.config.allowUnfree = true;
   xresources.properties = {
     "Xcursor.size" = 16;
     "Xft.dpi" = 172;
@@ -33,7 +32,7 @@
   programs.zsh = import ./zsh.nix;
 
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 
   imports = [
     ./hypr/hyprland.nix

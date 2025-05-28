@@ -15,16 +15,19 @@
 
   programs.nix-ld.libraries = with pkgs; [
 
-    libstdcxx5
     libgcc
     libcxx
 
   ];
 
-  fonts.packages = with pkgs; [  nerdfonts];
+  fonts.packages = with pkgs; [ 
+    nerd-fonts.monoid
+  ];
   services.flatpak.enable = true;
-  networking.hostName = "nixos"; 
-
+  networking.hostName = "nixos";
+  networking.extraHosts = ''
+    10.10.11.64 nocturnal.htb
+  '';
   # Enable networking
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true;
@@ -94,7 +97,7 @@
   users.users.hugo = {
     isNormalUser = true;
     description = "Hugo";
-    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" "wireshark" "scanner" "lp"];
+    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" "wireshark" "scanner" "lp" "plugdev"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
@@ -127,6 +130,7 @@
      git
      arc-theme
      inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+     intel-ocl
   ];
 
   networking.firewall = {
@@ -154,6 +158,6 @@
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
 
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }

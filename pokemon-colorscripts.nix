@@ -16,7 +16,7 @@ pkgs.stdenv.mkDerivation {
 
   buildInputs = with pkgs; [
     bash
-    python39
+    python3
   ];
 
   installPhase = ''

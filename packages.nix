@@ -112,7 +112,7 @@ pkgs : with pkgs;[
 	wpscan
 	sqlitebrowser
 	xfce.mousepad
-	postman
+	#postman #broken
 	xbindkeys
 	xdotool
 	xorg.xev
@@ -134,4 +134,18 @@ pkgs : with pkgs;[
 	python312Packages.libpcap
 	gparted
 	xorg.xhost
+    wineWowPackages.waylandFull
+	filezilla
+	qdirstat
+	unrar
+	chromedriver
+	miraclecast
+	nix-search-cli
+	smbmap
+	samba4Full
+	ilspycmd
+	openldap
+	aircrack-ng
+	sqlmap
+	hashcat
 ]
