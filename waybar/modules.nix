@@ -29,12 +29,10 @@
         "custom/separator#line" 
         "hyprland/workspaces#kanji" 
         "custom/separator#dot-line" 
-        "idle_inhibitor" 	
-        "custom/hint" 	
+        "network#speed" 
     ];  
 
     modules-right= [
-        "network#speed" 
         "group/connections" 
         "custom/separator#line" 
         "tray" 

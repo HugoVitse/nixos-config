@@ -59,6 +59,7 @@
       layout = "fr";
       variant = "azerty";
     };
+    desktopManager.xfce.enable = true;
     displayManager.lightdm.enable = true;
     displayManager.lightdm.greeters.gtk = {
       theme.name = "Arc-Dark";
@@ -69,7 +70,9 @@
       position=50%,center 75%,center
       default-user-image=/var/lib/lightdm/user.png
     '';
+    videoDrivers = [ "modesetting" ];
   };
+
 
   
 
@@ -94,13 +97,34 @@
   console.keyMap = "fr";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.extraGroups.plugdev = { };
+
   users.users.hugo = {
     isNormalUser = true;
     description = "Hugo";
-    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" "wireshark" "scanner" "lp" "plugdev"];
+    extraGroups = [ "video" "networkmanager" "wheel" "docker" "vboxusers" "wireshark" "scanner" "lp" "plugdev"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
+  services.udev.packages = with pkgs; [
+    openocd
+    (writeTextFile {
+      name = "pupil-udev-rules";
+      destination = "/etc/udev/rules.d/99-pupil.rules";
+      text = ''
+        # Pupil Labs eye cameras
+        SUBSYSTEM=="video4linux", ATTRS{idVendor}=="0c45", ATTRS{idProduct}=="64ab", GROUP="video", MODE="0660"
+
+        # Pupil Labs world camera
+        SUBSYSTEM=="video4linux", ATTRS{idVendor}=="05a3", ATTRS{idProduct}=="9232", GROUP="video", MODE="0660"
+
+        # Règle USB custom
+        SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", GROUP="plugdev", MODE="0664"
+      '';
+    })
+  ];
+
+
 
   programs.wireshark.enable=true;
   
@@ -124,6 +148,10 @@
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
 
+  # configuration.nix
+
+
+
   environment.systemPackages = with pkgs; [
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
@@ -135,7 +163,7 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 80 443 4444 5555 20 21 9001 ];
+    allowedTCPPorts = [ 80 443 4444 5555 20 21 9001 5670 ];
     allowedUDPPortRanges = [
       { from = 4000; to = 4007; }
       { from = 8000; to = 8010; }

@@ -61,7 +61,7 @@ pkgs : with pkgs;[
     pciutils # lspci
     usbutils # lsusb
     firefox-devedition
-    ags
+    ags_1
     discord
     blueman
     rofi
@@ -148,4 +148,10 @@ pkgs : with pkgs;[
 	aircrack-ng
 	sqlmap
 	hashcat
+	telegram-desktop
+	anki
+	v4l-utils
+	psmisc
+	portaudio
+	slack
 ]

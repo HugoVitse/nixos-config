@@ -12,10 +12,11 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    aes_cpp.url = "github:HugoVitse/AES_CPP";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
   };
 
-  outputs = inputs@{nixpkgs, home-manager, ... }: {
+  outputs = inputs@{nixpkgs, home-manager, aes_cpp, ... }: {
 
     
     nixosConfigurations = {
@@ -31,6 +32,7 @@
               (import ./pokemon-colorscripts.nix {
                 inherit pkgs lib;
               })
+              aes_cpp.packages.x86_64-linux.default
 
             ];
           }
