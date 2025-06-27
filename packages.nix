@@ -1,4 +1,11 @@
-pkgs : with pkgs;[
+{ pkgs, inputs }:  with pkgs;[
+
+     (import ./pokemon-colorscripts.nix {
+        inherit pkgs lib;
+    })
+
+    inputs.aes_cpp.packages.${pkgs.system}.default
+
     neofetch
     nnn # terminal file manager
 

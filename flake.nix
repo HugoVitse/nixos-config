@@ -21,19 +21,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
-          ./home_wrapper.nix
-          {
-            environment.systemPackages = with import nixpkgs { system = "x86_64-linux"; }; [
-
-              (import ./pokemon-colorscripts.nix {
-                inherit pkgs lib;
-              })
-              aes_cpp.packages.x86_64-linux.default
-
-            ];
-          }
-
-          
+          ./home_config.nix          
         ];
       };
     };
