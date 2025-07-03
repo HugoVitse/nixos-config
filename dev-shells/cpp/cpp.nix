@@ -20,6 +20,7 @@ pkgs.mkShell {
     pkgs.qt6.wrapQtAppsHook
     pkgs.makeWrapper
     pkgs.bashInteractive
+    pkgs.python3Packages.pybind11
   ];
 
   # Optional: Add a custom environment message

@@ -7,6 +7,9 @@
       t = "./scripts/test.sh";
       r = "./scripts/run.sh";
       ct = "./scripts/ct.sh";
+
+      pupil = "nix develop ~/nixos-config/dev-shells/pupil/ --command zsh";
+
       reverse = "nix develop ~/nixos-config/dev-shells/reverse/ --command zsh";
       ettercap = "nix develop ~/nixos-config/dev-shells/ettercap/ --command zsh";
       node-shell = "nix develop ~/nixos-config/dev-shells/node/ --command zsh";

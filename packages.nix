@@ -161,4 +161,6 @@
 	psmisc
 	portaudio
 	slack
+    
+	qpdf
 ]
