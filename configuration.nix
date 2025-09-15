@@ -19,10 +19,11 @@
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
-
+    networkmanager.dns = "none";
+    nameservers = [ "1.1.1.1" "8.8.8.8" ];
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 80 443 4444 5555 20 21 9001 5670 ];
+      allowedTCPPorts = [ 80 443 4444 5555 20 21 9001 5670 32400 ];
       allowedUDPPortRanges = [
         { from = 4000; to = 4007; }
         { from = 8000; to = 8010; }
@@ -34,7 +35,7 @@
   services = {
     printing = {
       enable = true;
-      drivers = [ pkgs.hplip ];
+      drivers = [ pkgs.hplipWithPlugin ];
     };
 
     udev.packages = with pkgs; [
@@ -79,6 +80,9 @@
     gvfs.enable = true;
     udisks2.enable = true;
     usbmuxd.enable = true;
+    logind.lidSwitch = "ignore";
+    logind.lidSwitchExternalPower = "ignore";
+    logind.lidSwitchDocked = "ignore";
     logind.extraConfig = "''
       # don’t shutdown when power button is short-pressed
       HandlePowerKey=ignore

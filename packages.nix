@@ -163,4 +163,8 @@
 	slack
     
 	qpdf
+	dnsenum
+	exfatprogs
+	ntfs3g
+	vsftpd
 ]
